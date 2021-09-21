@@ -1,20 +1,14 @@
 <template>
-  <Hello msg="Hello Vue 3 + TypeScript + Vite" />
-  <Comp :title-info="{ value: 'TODO', color: 'green' }"></Comp>
-  <CompSetup :title-info="{ value: 'Setup', color: 'green' }"></CompSetup>
+  <router-link to="/">/</router-link>
+  <router-link to="/add">add</router-link>
+  <router-view></router-view>
 </template>
 
 <script lang="ts">
+import { defineComponent } from "vue";
 export default defineComponent({
   name: "App",
 });
-</script>
-
-<script lang="ts" setup>
-import Hello from "./components/Hello.vue";
-import Comp from "./components/Comp.vue";
-import CompSetup from "./components/CompSetup.vue";
-import { defineComponent } from "vue";
 </script>
 
 <style>

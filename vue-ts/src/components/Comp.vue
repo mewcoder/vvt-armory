@@ -1,6 +1,6 @@
 <template>
-  <div>{{ counter }}</div>
-  <div>{{ doubleCounter }}</div>
+  <div>counter：{{ counter }}</div>
+  <div>doubleCounter：{{ doubleCounter }}</div>
 
   <h3 :style="{ backgroundColor: titleInfo.color }">{{ titleInfo.value }}</h3>
   <input
@@ -9,7 +9,7 @@
     @keydown.enter="addTodo(newTodo(todoName))"
   />
   <div v-for="item in items" :key="item.id">
-    {{ item.name }}
+    {{ item.title }}
   </div>
 </template>
 
@@ -38,16 +38,17 @@ export default defineComponent({
   },
   created() {
     this.items.push({
-      id: this.counter++,
-      name: "Learn Vue",
+      id: 0,
+      title: "Learn Vue",
       completed: false,
     });
+    console.log(this.items[0].name);
   },
   methods: {
     newTodo(name: string): Todo {
       return {
         id: this.items.length + 1,
-        name: name,
+        title: name,
         completed: false,
       };
     },
