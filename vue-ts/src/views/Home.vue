@@ -1,6 +1,8 @@
 <template>
   <Hello msg="Hello Vue 3 + TypeScript + Vite" />
   <Rate v-model="rateValue"></Rate>
+  <hr />
+  <Calendar></Calendar>
 </template>
 
 <script lang="ts">
@@ -13,6 +15,7 @@ export default defineComponent({
 <script lang="ts" setup>
 import Hello from "../demo/Hello.vue";
 import Rate from "../components/Rate.vue";
+import Calendar from "../components/Calendar.vue";
 
 import { ref } from "vue";
 
