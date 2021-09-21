@@ -4,7 +4,7 @@
     <router-link to="/add">add</router-link>
   </div>
 
-  <router-view class=""></router-view>
+  <router-view></router-view>
 </template>
 
 <script lang="ts">

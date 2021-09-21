@@ -1,5 +1,6 @@
 <template>
   <Hello msg="Hello Vue 3 + TypeScript + Vite" />
+  <Rate v-model="rateValue"></Rate>
 </template>
 
 <script lang="ts">
@@ -11,6 +12,11 @@ export default defineComponent({
 
 <script lang="ts" setup>
 import Hello from "../demo/Hello.vue";
+import Rate from "../components/Rate.vue";
+
+import { ref } from "vue";
+
+const rateValue = ref(0);
 </script>
 
 <style></style>
