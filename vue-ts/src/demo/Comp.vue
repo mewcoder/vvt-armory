@@ -1,7 +1,7 @@
 <template>
-  <div>counter：{{ counter }}</div>
+  <div>counter：{{ $store.state.counter }}</div>
   <div>doubleCounter：{{ doubleCounter }}</div>
-
+  <hr />
   <h3 :style="{ backgroundColor: titleInfo.color }">{{ titleInfo.value }}</h3>
   <input
     type="text"
@@ -11,6 +11,7 @@
   <div v-for="item in items" :key="item.id">
     {{ item.title }}
   </div>
+  <hr />
 </template>
 
 <script lang="ts">
@@ -33,7 +34,7 @@ export default defineComponent({
   },
   computed: {
     doubleCounter(): number {
-      return this.counter * 2;
+      return this.$store.state.counter * 2;
     },
   },
   created() {
@@ -42,7 +43,6 @@ export default defineComponent({
       title: "Learn Vue",
       completed: false,
     });
-    console.log(this.items[0].name);
   },
   methods: {
     newTodo(name: string): Todo {

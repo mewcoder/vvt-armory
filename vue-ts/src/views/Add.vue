@@ -1,6 +1,6 @@
 <template>
-  <CompSetup :title-info="{ value: 'setup', color: 'red' }"></CompSetup>
-  <!-- <Comp :title-info="{ value: 'TODO', color: 'green' }"></Comp> -->
+  <Comp :title-info="{ value: 'TODO', color: 'green' }"></Comp>
+  <Comp2 :title-info="{ value: 'setup', color: 'red' }"></Comp2>
 </template>
 
 <script lang="ts">
@@ -11,8 +11,8 @@ export default defineComponent({
 </script>
 
 <script lang="ts" setup>
-import Comp from "../components/Comp.vue";
-import CompSetup from "../components/CompSetup.vue";
+import Comp from "../demo/Comp.vue";
+import Comp2 from "../demo/Comp2.vue";
 </script>
 
 <style></style>

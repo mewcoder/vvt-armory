@@ -2,7 +2,7 @@
   <div>{{ counter }}</div>
   <div>{{ doubleCounter }}</div>
   <button type="button" @click="$store.commit('add')">add</button>
-
+  <hr />
   <h3 :style="{ backgroundColor: titleInfo.color }">{{ titleInfo.value }}</h3>
   <input
     type="text"
@@ -15,7 +15,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, computed } from "vue";
+import { ref, computed, onMounted } from "vue";
 import type { PropType } from "vue";
 //导入类型声明
 import type { TitleInfo, Todo } from "../types";
@@ -41,10 +41,9 @@ const items = ref([] as Todo[]);
 const todoName = ref("");
 
 // 新加一个
-const res = await getItem(1);
-if (res.data) {
+getItem(1).then((res: any) => {
   items.value.push(res.data);
-}
+});
 
 const newTodo = (name: string): Todo => {
   return {

@@ -10,7 +10,7 @@ export default defineComponent({
 </script>
 
 <script lang="ts" setup>
-import Hello from "../components/Hello.vue";
+import Hello from "../demo/Hello.vue";
 </script>
 
 <style></style>

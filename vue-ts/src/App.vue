@@ -1,7 +1,10 @@
 <template>
-  <router-link to="/">/</router-link>
-  <router-link to="/add">add</router-link>
-  <router-view></router-view>
+  <div class="header">
+    <router-link to="/">/</router-link>
+    <router-link to="/add">add</router-link>
+  </div>
+
+  <router-view class=""></router-view>
 </template>
 
 <script lang="ts">
@@ -11,10 +14,17 @@ export default defineComponent({
 });
 </script>
 
-<style>
+<style lang="scss">
 #app {
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 20px;
+}
+.header {
+  a {
+    margin-right: 10px;
+  }
+  border-bottom: #2c3e50 solid 2px;
+  padding: 10px;
 }
 </style>
